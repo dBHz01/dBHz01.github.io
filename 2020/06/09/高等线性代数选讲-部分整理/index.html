@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>高等线性代数选讲 部分整理 | 拾光鸽者</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="dBHz">
+  <meta name="keywords" content="">
+  <meta name="description" content="浮空眼缬散云霞，无数心花发桃李">
+  <script id="hexo-configurations">
+  var CONFIG = {
+    root: '/',
+    theme: 'lx',
+    version: '0.0.0',
+    localsearch:{
+      "enable": false,
+      "trigger": "auto",
+      "top_n_per_article": 1,
+      "unescape": false,
+      "preload": false
+      },
+    path: '-'
+  };
+</script>
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "endless-river",
+	     });
+	}); 
+	</script>
+  <!--baidu_analytics-->
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?dBHz01#百度统计ID";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300|Noto+Serif+SC&amp;display=swap">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+<div class="single">
+<div id="page">
+<div id="lx-aside" style="background-image: url(/images/page-cover.jpg)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><a href="/"><img src="/images/person_1.jpg"></a></div>
+    <span>2020-06-09</span>
+    <h2>高等线性代数选讲 部分整理</h2>
+    <div class="tags"><i class="fa fa-tag"></i><a class="tag-link" href="/tags/notes/" rel="tag">notes</a></div>
+    <div class="social-links">
+<a href="https://github.com/dbhz01" target="_blank"><i class="fa fa-github fa-fw"></i></a><a href="mailto:hez19@mails.tsinghua.edu.cn"><i class="fa fa-envelope fa-fw"></i></a>
+</div></div>
+</div>
+</div>
+
+<div id="lx-main-content">
+  <div class="lx-post">
+    <div class="lx-entry padding">
+      <div>
+        <p>似乎在矩阵部分出现了网页版显示异常…凑合能看，需要pdf版的请找作者</p>
+<h2 id="Chapter-2"><a href="#Chapter-2" class="headerlink" title="Chapter 2"></a>Chapter 2</h2><ol>
+<li>定义点积</li>
+<li>正交补空间</li>
+</ol>
+<h2 id="Chapter-3"><a href="#Chapter-3" class="headerlink" title="Chapter 3"></a>Chapter 3</h2><ol>
+<li>$\beta$投影到$\alpha$</li>
+<li>CS定理 $\rightarrow$ 三角不等式</li>
+<li>投影矩阵</li>
+<li>GS正交化？</li>
+<li>酉阵保内积保长度</li>
+<li>酉阵特征值与行列式均是模长为1的复数</li>
+<li>Hermite阵可以拆分成实部和虚部</li>
+<li>Hermite型为实数，可由此定义正定的Hermite阵</li>
+<li>Hermite阵的特征值都是实数</li>
+<li>A可酉相似对角化等价于A是复正规矩阵</li>
+</ol>
+<h2 id="Chapter-4"><a href="#Chapter-4" class="headerlink" title="Chapter 4"></a>Chapter 4</h2><ol>
+<li>A正规等价于其酉相似矩阵正规</li>
+<li>复正规矩阵的谱定理</li>
+<li>实正交阵构成矩阵群O(n) special orthogonal构成矩阵群SO(n) 表示行列式为1的实正交阵</li>
+<li>SO(3)和R<sup>3</sup>上的旋转变换一一对应</li>
+</ol>
+<h2 id="Chapter-5-快速傅里叶变换"><a href="#Chapter-5-快速傅里叶变换" class="headerlink" title="Chapter 5 快速傅里叶变换"></a>Chapter 5 快速傅里叶变换</h2><ol>
+<li><p>$$ \left{<br>\begin{array}<br>{\frac{\partial}{\partial t}(x,t)=\alpha\frac{\partial^2}{\partial x^2}u(x,t)}\<br>{u(x,0)=f(x)}\<br>{u(0,t)=u(1,t)=0}<br>\end{array} \right. $$</p>
+</li>
+<li><p>$f(x)=\sin(k\pi x)$时上式解为$\sin(k\pi x)e^{-\alpha k^2 \pi^2t}$</p>
+</li>
+<li><p>$f(x)=\sum_{k=1}^mc_ksin(k\pi x)$时上式解为$\sum_{k=1}^mc_k\sin(k\pi x)e^{-\alpha k^2\pi^2t}$</p>
+</li>
+<li><p>傅里叶级数展开后用复数形式表示</p>
+<p>$f(x)=\sum_{-\infty}^{\infty}a_ne^{2\pi inx}dx$</p>
+<p>其中$a_n=\int_0^1 f(x)e^{-2\pi inx}dx$称为$f(x)$的Fourier系数</p>
+</li>
+<li><p>$e_n=(e^{2\pi i0},e^{\frac{2\pi in}{N}},e^{\frac{4\pi in}{N}},…,e^{\frac{2\pi in}{N}(N-1)})$</p>
+<p>​     $=(1,w_N^n,(w_N^2)^n,…(w_N^{N-1})^n)$</p>
+<p>​      $(0\leq n\leq N-1)$</p>
+<p>$e_0,e_1,…,e_{N-1}$是$C^N$的正交基且模长为$\sqrt{N}$</p>
+<p>$\forall y\in C^N \exists!(c_0,c_1,…,c_{N-1}) \in C^N$使得$y=c_0e_0+c_1e_1+…+c_{N-1}e_{N-1}$</p>
+<p>事实上$c_n=\frac1N\sum_{k=0}^{N-1}y_ke^{-2\pi in\frac{k}{N}}$可以看作离散的Riemann和</p>
+</li>
+<li><p>$\forall y \in C^N,y=F_Nc$有唯一解$c=F_N^{-1}y=\frac1N \bar{F_N}y$</p>
+<p>$y\rightarrow c=F_N^{-1}y$成为离散Fourier变换</p>
+</li>
+<li><p>FFT是快速计算DFT的方法，原理是利用$F_N$和$F_{\frac N2}$之间的关系</p>
+<p>$N=2n$则：</p>
+<p>$F_N=$$$\left[ \begin{array} II_n&amp;D_n\ I_n&amp;-D_n\end{array}\right]$$$$\left[ \begin{array} FF_n&amp;0\ 0&amp;F_n\end{array}\right]P_N$$</p>
+<p>$P_N$是$(1,1),(2,3),…,(n,2n-1),(n+1,2),(n+2,4),…,(2n,2n)$位置为1的置换阵</p>
+<p>$D_N=$$$\left[ \begin{array} 11\ &amp;w_N\&amp;&amp;w_N^2\&amp;&amp;&amp;…\&amp;&amp;&amp;&amp;w_N^{n-1}\end{array}\right]$$</p>
+</li>
+</ol>
+<h2 id="Chapter-6-循环矩阵-Schur定理-C-H定理"><a href="#Chapter-6-循环矩阵-Schur定理-C-H定理" class="headerlink" title="Chapter 6 循环矩阵 Schur定理 C-H定理"></a>Chapter 6 循环矩阵 Schur定理 C-H定理</h2><ol>
+<li><p>$P=$$$\left[ \begin{array} 10&amp;1\ &amp;0&amp;1\&amp;&amp;0&amp;1\&amp;&amp;&amp;…\&amp;&amp;&amp;&amp;1\1&amp;&amp;&amp;&amp;0\end{array}\right]$$</p>
+<p>则$P$的特征值为$1,w_n,w_n^2,…,w_n^{n-1}$</p>
+<p>$F_n^{-1}PF_n=$$$\left[ \begin{array} 11&amp;\ &amp;w_n\&amp;&amp;w_n^2\&amp;&amp;&amp;…\&amp;&amp;&amp;&amp;w_n^{n-1}\end{array}\right]$$</p>
+<p>$C=c_0I+c_1P_…+c_{n-1}P^{n-1}$</p>
+<p>令$f(x)=c_0+c_1x+…+c_{n-1}x^{n-1}$</p>
+<p>$F_n^{-1}CF_n=$$$\left[ \begin{array} 1f(1)&amp;\ &amp;f(w_n)\&amp;&amp;f(w_n^2)\&amp;&amp;&amp;…\&amp;&amp;&amp;&amp;f(w_n^{n-1})\end{array}\right]$$</p>
+</li>
+<li><p>(Schur)设A$\in M_n(C)$则$\exists$可逆阵P使得$P^{-1}AP$是上三角阵</p>
+<p>P可取作酉阵</p>
+</li>
+<li><p>$A\in M_n(C),f(x)\in C[x],f(A)=0,\lambda$是$A$的特征值</p>
+<p>则$f(\lambda)=0$</p>
+</li>
+</ol>
+<h2 id="Chapter-7-C-H定理-最小多项式"><a href="#Chapter-7-C-H定理-最小多项式" class="headerlink" title="Chapter 7 C-H定理 最小多项式"></a>Chapter 7 C-H定理 最小多项式</h2><ol>
+<li><p>设$A \in M_n(C),f(x)=\det(xI_n-A)$则$f(A)=0$</p>
+</li>
+<li><p>$f(x)=\det(xI_n-A)=(x-\lambda_1)^{m_1}(x-\lambda_2)^{m_2}…(x-\lambda_k)^{m_k}$</p>
+<p>则最小多项式$d(x)=(x-\lambda_1)^{e_1}(x-\lambda_2)^{e_2}…(x-\lambda_k)^{e_k}$</p>
+</li>
+<li><p>$N^n=0$特征多项式和最小多项式均是$x^n=0$</p>
+</li>
+<li><p>$J_n(\lambda)$的特征多项式和最小多项式均是$(x-\lambda)^n$</p>
+</li>
+<li><p>分块主对角线矩阵的特征多项式是各方块的特征多项式乘积</p>
+<p>最小多项式是各方块的最小多项式的最小公倍式</p>
+</li>
+</ol>
+<h2 id="chapter-9-Jordan标准型唯一性-初等因子-根子空间"><a href="#chapter-9-Jordan标准型唯一性-初等因子-根子空间" class="headerlink" title="chapter 9 Jordan标准型唯一性 初等因子 根子空间"></a>chapter 9 Jordan标准型唯一性 初等因子 根子空间</h2><ol>
+<li><p>#$J_k(\lambda)=r(A-\lambda)^{k-1}-2r(A-\lambda)^k+r(A-\lambda)^{k+1}$</p>
+</li>
+<li><p>$r(A-\lambda)^l-r(A-\lambda)^{l+1}=$#$J_{\geq l+1}(\lambda)$</p>
+<p>取$l=0$可得$\lambda$的几何重数$=A$的Jordan标准型$J$中属于$\lambda$的Jordan块的个数</p>
+</li>
+<li><p>$A$的特征多项式等于$(\lambda-\lambda_1)^{e_1}(\lambda-\lambda_2)^{e_2}…(\lambda-\lambda_k)^{e_k}$</p>
+<p>最小多项式等于$(\lambda-\lambda_1)^{e_{11}}(\lambda-\lambda_2)^{e_{21}}…(\lambda-\lambda_k)^{e_{k1}}$</p>
+</li>
+<li><p>满足$(A-\lambda I)^kv=0$的$v$称为广义特征向量</p>
+<p>广义特征子空间称为根子空间</p>
+<p>$\dim N(A-\lambda_iI)^{\infty}=e_i(等于\lambda_i的代数重数)$</p>
+<p>$N(A-\lambda_iI)^\infty=N(A-\lambda_i)^{e_{i1}}$</p>
+</li>
+</ol>
+<h2 id="Chapter-10-Jordan标准型的计算-矩阵的指数"><a href="#Chapter-10-Jordan标准型的计算-矩阵的指数" class="headerlink" title="Chapter 10 Jordan标准型的计算 矩阵的指数"></a>Chapter 10 Jordan标准型的计算 矩阵的指数</h2><ol>
+<li>计算出$r(A-\lambda_iI)^l$并计算块的个数 $\dim N(A-\lambda_iI)$</li>
+<li>找到$A$的属于$\lambda_i$的特征向量，且在$N(A-\lambda_i)$中</li>
+<li>算满足$(A-\lambda_i)^{k-1}\alpha_k=\alpha_1$的$\alpha_k$</li>
+</ol>
+<h2 id="Chapter-11-矩阵指数"><a href="#Chapter-11-矩阵指数" class="headerlink" title="Chapter 11 矩阵指数"></a>Chapter 11 矩阵指数</h2><ol>
+<li><p>$D=$$$\left[ \begin{array} 1\lambda_1&amp;\ &amp;\lambda_2\&amp;&amp;\lambda_3\&amp;&amp;&amp;…\&amp;&amp;&amp;&amp;\lambda_n\end{array}\right]$$</p>
+<p>则$e^D=$$$\left[ \begin{array} 1e^{\lambda_1}&amp;\ &amp;e^{\lambda_2}\&amp;&amp;e^{\lambda_3}\&amp;&amp;&amp;…\&amp;&amp;&amp;&amp;e^{\lambda_n}\end{array}\right]$$</p>
+<p>对块对角阵同理</p>
+</li>
+<li><p>$AB=BA$时有$e^{A+B}=e^Ae^B$</p>
+</li>
+<li><p>对于一般矩阵$A$将其化为jordan标准型即可求解</p>
+</li>
+<li><p>$A=$$$\left[ \begin{array} 10&amp;\theta\ -\theta&amp;0\end{array}\right]$$</p>
+<p>则$e^A=$$$\left[ \begin{array} 1\cos\theta&amp;\sin\theta\ -\sin\theta&amp;\cos\theta\end{array}\right]$$</p>
+</li>
+<li><p>特征值的最大模长定义为$A$的谱半径</p>
+<p>谱半径与收敛半径进行比较判断是否收敛，也可对$A$除以谱半径</p>
+</li>
+<li><p>$A$的特征值是$\lambda_1…\lambda_n$</p>
+<p>则$e^A$的特征值是$e^{\lambda_1},…,e^{\lambda_n}$</p>
+<p>推论$\det(e^A)=e^{trA}$</p>
+</li>
+</ol>
+<h2 id="Chapter-12-一阶常系数线性齐次微分方程组"><a href="#Chapter-12-一阶常系数线性齐次微分方程组" class="headerlink" title="Chapter 12 一阶常系数线性齐次微分方程组"></a>Chapter 12 一阶常系数线性齐次微分方程组</h2><ol>
+<li><p>$L=\frac{\rm d}{\rm dt}-A$</p>
+<p>$L\pmb v(t)=0$ 齐次且线性 故解为线性空间 且解空间维数为n</p>
+</li>
+<li><p>$A\pmb \alpha=\lambda\pmb\alpha$ 则$e^{\lambda t}\pmb\alpha$是解 故$A$可对角化的时候找到解空间的一组基</p>
+</li>
+<li><p>$A$不可对角化的时候Jordan链$\pmb{\alpha_1},\pmb{\alpha_2},…,\pmb{\alpha_k}$缺失了$\pmb{\alpha_2},…,\pmb{\alpha_k}$为初始值的解</p>
+<p>考虑</p>
+<p>$e^{\lambda t}\pmb{\alpha_1}$</p>
+<p>$e^{\lambda t}\pmb{\alpha_2}+te^{\lambda t}\pmb{\alpha_1}$</p>
+<p>$e^{\lambda t}\pmb{\alpha_3}+te^{\lambda t}\pmb{\alpha_2}+\frac{t^2}{2!}e^{\lambda t}\pmb{\alpha_1}$</p>
+<p>$…$</p>
+<p>$e^{\lambda t}\pmb{\alpha_k}+te^{\lambda t}\pmb{\alpha_{k-1}}+\frac{t^2}{2!}e^{\lambda t}\pmb{\alpha_{k-2}}+…+\frac{t^{k-1}}{(k-1)!}e^{\lambda t}\pmb{\alpha_1}$</p>
+<p>是原方程的k个解</p>
+</li>
+<li><p>$\frac{\rm d}{\rm dt}e^{At}=Ae^{At}$</p>
+<p>记$$e^{At}=(\pmb{r_1(t)},\pmb{r_2(t)},…,\pmb{r_n(t)})$$</p>
+<p>则原方程的解空间的基为$\pmb{r_1(t)},\pmb{r_2(t)},…,\pmb{r_n(t)}$初始值为$\pmb{e_1},\pmb{e_2},…,\pmb{e_n}$</p>
+<p>通解是$e^{At}\pmb c$ 初始值是$\pmb c$</p>
+</li>
+</ol>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(/images/footer_1.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="#">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>没有更新的文章</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(/images/footer_2.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2020/05/08/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E4%B8%AA%E5%BC%80%E5%A7%8B/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>也许是一个开始...</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+<div class="comment"><div id="comments"></div></div>
+<footer>
+  <div>
+  Copyright &copy; 2020.<a href="/">拾光鸽者</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.blleng.cn" target="_blank">Lx</a><br>
+  </div>
+</footer>
+</div>
+
+<button class="menu-trigger"></button>
+<div class="menu">
+  <div class="menu-head">
+    <span class="layer">
+      <div class="col">
+        <div class="row for-pic">
+          <div class="profile-pic">
+            <a href="/"><img src="/images/person_1.jpg" alt="dBHz"/></a>
+          </div>
+        </div>
+        <div class="row for-name">
+          <p>dBHz</p>
+          <span class="tagline">Young for you</span>
+        </div>
+      </div>
+    </span>
+  </div>
+  <nav class="menu-container">
+  <ul class="menu-items">
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-bookmark fa-fw"></i>页面</span>
+        <ul>
+          <li><a href="/guestbook">留言</a></li>
+        <li><a href="/about">关于</a></li>
+        </ul>
+    </li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-link fa-fw"></i>友链</span>
+        <ul>
+          <li> <a href="https://raspii.tech" target="_blank">主席大大</a></li>
+        <li> <a href="https://miyanaga.tech/" target="_blank">红姐姐</a></li>
+        </ul>
+    </li>
+  </ul>
+  </nav>
+</div>
+
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/jquery.waypoints.min.js"></script>
+<script src="/js/jquery.stellar.min.js"></script>
+<script src="/js/main.js"></script>
+
+<script src="//unpkg.com/valine"></script>
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'MN03TyXH1KtzNVBU8C5YuaKV-gzGzoHsz',
+    appKey: '5omsHcsydVYCEz5I1XdqEsKo',
+    placeholder: '此处留言',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    lang: 'zh-cn' || 'zh-cn'
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+  TeX: {
+          extensions: ["mhchem.js"]
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.5/latest.js?config=TeX-MML-AM_SVG"></script>
+</body>
+</html>
